@@ -1,15 +1,19 @@
 import React from "react";
+import { Card, Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function UserCard({ user }) {
   return (
-    <div style={{ border: "1px solid gray", padding: "10px", margin: "10px" }}>
-      <h3>{user.name}</h3>
- 
-     <p>Email: {user.email}</p>
-      <p>Company: {user.company?.name}</p>
-      <Link to={`/user/${user.id}`}>View Details</Link>
-    </div>
+     <Card>
+      <Card.Body>
+        <Card.Title>{user.name}</Card.Title>
+        <Card.Text>Email: {user.email}</Card.Text>
+        <Card.Text>Company: {user.company?.name}</Card.Text>
+        <Link to={`/user/${user.id}`}>
+          <Button variant="primary">View Details</Button>
+        </Link>
+      </Card.Body>
+    </Card>
   );
 }
 
