@@ -33,13 +33,14 @@ function AddUserForm({ onAddUser }) {
             onChange={(e) => setName(e.target.value)}
           />
         </Col>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        style={{ padding: "10px", marginRight: "10px" }}
-      />
+       <Col>
+          <Form.Control
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Col>
       <button type="submit" style={{ padding: "10px" }}>Add User</button>
     </form>
   );
