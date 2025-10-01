@@ -1,0 +1,41 @@
+/* Primary button */
+.btn-primary {
+  background-color: #4f46e5 !important; /* Indigo soft */
+  border-color: #4f46e5 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #4338ca !important; /* Indigo më e errët */
+  border-color: #4338ca !important;
+}
+
+/* Success button */
+.btn-success {
+  background-color: #34d399 !important; /* Green soft */
+  border-color: #34d399 !important;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+  background-color: #059669 !important; /* Green më e errët */
+  border-color: #059669 !important;
+}
+
+/* Danger button */
+.btn-danger {
+  background-color: #f87171 !important; /* Red pastel */
+  border-color: #f87171 !important;
+}
+
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active {
+  background-color: #dc2626 !important; /* Red më e fortë */
+  border-color: #dc2626 !important;
+}
+body {
+  background-color:  #e0f7fa !important; /* Ngjyrë pastel e lehtë */
+}
