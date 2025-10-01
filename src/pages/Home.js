@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+
 import UserCard from "../components/UserCard";
 import SearchBar from "../components/SearchBar";
 import AddUserForm from "../components/AddUserForm";
