@@ -26,14 +26,18 @@ function Home() {
   );
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>User Management App</h1>
+    <Container className="mt-4">
+      <h1 className="text-center text-primary mb-4">User Management App</h1>
       <AddUserForm onAddUser={handleAddUser} />
       <SearchBar onSearch={handleSearch} />
-      {filteredUsers.map((user) => (
-        <UserCard key={user.id} user={user} />
-      ))}
-    </div>
+      <Row>
+        {filteredUsers.map((user) => (
+          <Col md={4} key={user.id} className="mb-4">
+            <UserCard user={user} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 }
 
