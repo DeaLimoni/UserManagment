@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import{Form, Button, Row, Col} from "react-bootstrap";
+import { Form, Button, Row, Col } from "react-bootstrap";
 
 function AddUserForm({ onAddUser }) {
   const [name, setName] = useState("");
@@ -23,7 +23,7 @@ function AddUserForm({ onAddUser }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginBottom: "20px" }}>
+    <Form onSubmit={handleSubmit} className="mb-4">
       <Row>
         <Col>
           <Form.Control
@@ -33,7 +33,7 @@ function AddUserForm({ onAddUser }) {
             onChange={(e) => setName(e.target.value)}
           />
         </Col>
-       <Col>
+        <Col>
           <Form.Control
             type="email"
             placeholder="Email"
@@ -41,8 +41,13 @@ function AddUserForm({ onAddUser }) {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Col>
-      <button type="submit" style={{ padding: "10px" }}>Add User</button>
-    </form>
+        <Col>
+          <Button type="submit" variant="success">
+            Add User
+          </Button>
+        </Col>
+      </Row>
+    </Form>
   );
 }
 
