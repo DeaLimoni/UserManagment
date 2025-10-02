@@ -8,6 +8,7 @@ import AddUserForm from "../components/AddUserForm";
 function Home() {
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+   const [sortBy, setSortBy] = useState("name");
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -22,10 +23,16 @@ function Home() {
     setUsers([user, ...users]);
   };
 
-  const filteredUsers = users.filter((user) =>
-    user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    user.email.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredUsers = users
+    .filter((user) =>
+      user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.email.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .sort((a, b) => {
+      if (sortBy === "name") return a.name.localeCompare(b.name);
+      if (sortBy === "email") return a.email.localeCompare(b.email);
+      return 0;
+    });
 
   return (
     <Container className="mt-4">
